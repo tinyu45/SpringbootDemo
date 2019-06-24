@@ -1,3 +1,23 @@
+#服务器相关配置
 server:
   port: 5000
-  context-path: /api/v1.0
+  servlet: 
+    context-path: /api/v1.0 
+  
+#数据库连接相关配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.3.5:3306/data_test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 2462345496
+    
+#数据库连接池配置    
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
