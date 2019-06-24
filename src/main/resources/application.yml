@@ -3,6 +3,7 @@ server:
   port: 5000
   servlet: 
     context-path: /api/v1.0 
+ 
   
 #数据库连接相关配置
 spring:
@@ -21,3 +22,11 @@ spring:
       pool-name: DatebookHikariCP
       max-lifetime: 1800000
       connection-timeout: 30000
+
+#文件上传
+  servlet:
+       # 上传文件总的最大值
+    multipart:
+      max-request-size: 10MB
+      # 单个文件的最大值
+      max-file-size: 10MB
